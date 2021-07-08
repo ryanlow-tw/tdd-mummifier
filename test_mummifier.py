@@ -9,6 +9,7 @@ class MummifierTest(unittest.TestCase):
         self.assertEqual("", result)
 
     def test_should_return_original_string_if_no_vowels(self):
-        result = Mummifier().mummify("")
-        self.assertEqual("", result)
+        result = Mummifier().mummify("str")
+        self.assertEqual("str", result)
+
 
