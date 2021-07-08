@@ -20,4 +20,8 @@ class MummifierTest(unittest.TestCase):
         result = Mummifier().mummify("e")
         self.assertEqual("mommy", result)
 
+    def test_should_not_replace_vowel_with_mommy_if_vowel_is_less_than_30pct_of_string(self):
+        result = Mummifier().mummify("blah")
+        self.assertEqual("blah", result)
+
 
