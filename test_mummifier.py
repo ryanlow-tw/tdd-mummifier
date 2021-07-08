@@ -16,4 +16,8 @@ class MummifierTest(unittest.TestCase):
         result = Mummifier().mummify("a")
         self.assertEqual("mommy", result)
 
+    def test_should_return_a_if_string_is_a_vowel_e(self):
+        result = Mummifier().mummify("e")
+        self.assertEqual("mommy", result)
+
 
