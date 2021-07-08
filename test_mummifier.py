@@ -8,4 +8,7 @@ class MummifierTest(unittest.TestCase):
         result = Mummifier().mummify("")
         self.assertEqual("", result)
 
+    def test_should_return_original_string_if_no_vowels(self):
+        result = Mummifier().mummify("")
+        self.assertEqual("", result)
 
