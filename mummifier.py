@@ -14,12 +14,9 @@ class Mummifier:
             return input_string
 
     def vowel_length_is_more_than_30pct(self, input_string):
-
         vowel_count = 0
-
         if len(input_string) == 0:
             return False
-
         for char in input_string:
             if char in self.vowels:
                 vowel_count += 1
@@ -28,20 +25,24 @@ class Mummifier:
 
     def replace_vowel_with_mommy(self, input_string):
         result_string = ""
-        is_vowel = None
+        prev_char_is_vowel = None
         end_of_string = len(input_string) - 1
+
         for i in range(len(input_string)):
             char = input_string[i]
+
             if char in self.vowels and i == end_of_string:
                 result_string += 'mommy'
                 return result_string
             
-            elif char in self.vowels:
-                is_vowel = True
+            if char in self.vowels:
+                prev_char_is_vowel = True
+            
             else:
-                if is_vowel:
+                if prev_char_is_vowel:
                     result_string += 'mommy'
-                    is_vowel = False
+
+                prev_char_is_vowel = False
                 result_string += char
         return result_string
 
