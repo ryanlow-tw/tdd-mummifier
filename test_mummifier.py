@@ -31,3 +31,7 @@ class MummifierTest(unittest.TestCase):
     def test_should_replace_vowels_with_mommy_if_vowels_are_more_than_50pct_of_string_and_string_ends_with_vowel(self):
         result = Mummifier().mummify("blaa")
         self.assertEqual("blmommy", result)
+
+    def test_if_vowels_are_more_than_50pct_of_string_and_there_are_multiple_set_of_vowels(self):
+        result = Mummifier().mummify("blaaha")
+        self.assertEqual("blmommyhmommy", result)
