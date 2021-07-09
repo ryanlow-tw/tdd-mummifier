@@ -29,17 +29,19 @@ class Mummifier:
     def replace_vowel_with_mommy(self, input_string):
         result_string = ""
         is_vowel = None
+        end_of_string = len(input_string) - 1
         for i in range(len(input_string)):
             char = input_string[i]
-            if char in self.vowels:
+            if char in self.vowels and i == end_of_string:
+                result_string += 'mommy'
+                return result_string
+            
+            elif char in self.vowels:
                 is_vowel = True
-                end_of_string = len(input_string) - 1
-                if i == end_of_string:
-                    result_string += 'mommy'
-                    return result_string
             else:
                 if is_vowel:
                     result_string += 'mommy'
                     is_vowel = False
                 result_string += char
         return result_string
+
