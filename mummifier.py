@@ -3,6 +3,9 @@ class Mummifier:
 
     def mummify(self, input_string):
 
+        if input_string is None:
+            raise TypeError
+
         input_string = input_string.lower()
 
         if input_string in self.vowels:
