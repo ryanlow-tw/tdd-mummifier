@@ -45,3 +45,7 @@ class MummifierTest(unittest.TestCase):
             Mummifier().mummify(None)
         the_exception = cm.exception
         self.assertEqual(f"{the_exception}", "Please input a valid string!")
+
+    def test_for_string_starting_with_vowel(self):
+        result = Mummifier().mummify("aabl")
+        self.assertEqual("mommybl", result)
