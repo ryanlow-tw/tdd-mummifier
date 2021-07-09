@@ -4,7 +4,7 @@ class Mummifier:
     def mummify(self, input_string):
 
         if input_string is None:
-            raise TypeError
+            raise TypeError("Please input a valid string!")
 
         input_string = input_string.lower()
 

@@ -41,9 +41,10 @@ class MummifierTest(unittest.TestCase):
         self.assertEqual("blmommy", result)
 
     def test_for_null_value(self):
-
         # expected_exception = raise Exception("Please input a valid string!")
         # self.assertRaises(expected_exception, Mummifier().mummify, None)
 
         with self.assertRaises(TypeError) as cm:
             Mummifier().mummify(None)
+        the_exception = cm.exception
+        self.assertEqual(f"{the_exception}", "Please input a valid string!")
