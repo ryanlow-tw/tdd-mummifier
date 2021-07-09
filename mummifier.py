@@ -3,6 +3,8 @@ class Mummifier:
 
     def mummify(self, input_string):
 
+        input_string = input_string.lower()
+
         if input_string in self.vowels:
             return "mommy"
         elif self.vowel_length_is_more_than_30pct(input_string):
